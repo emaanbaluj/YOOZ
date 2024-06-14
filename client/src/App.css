@@ -1,31 +1,61 @@
+/* Reset some default styles to ensure no unexpected margins or paddings */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .App {
   text-align: center;
+  position: relative; /* Ensure the App has a relative position */
+}
+
+.App-logo-container {
+  background-color: #ffffff; /* Set your desired background color */
+  display: inline-block; /* Make the container fit the image */
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 65vmin; /* Adjusted size to make the logo bigger */
   pointer-events: none;
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: linear-gradient(to right, #00747B, #9E00FF);
+  min-height: 100vh; /* Make sure the header covers the entire view height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  position: relative;
+}
+
+.Image-container {
+  position: absolute; /* Absolute positioning within the App */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.App-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.05;
+  margin: 20px auto;
 }
 
 @keyframes App-logo-spin {
