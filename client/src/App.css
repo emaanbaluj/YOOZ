@@ -1,4 +1,13 @@
+/* Import the Press Start 2P font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Define the Hiragino Kaku Gothic Std font */
+@font-face {
+  font-family: 'Hiragino Kaku Gothic Std';
+  src: url('fonts/HiraginoKakuGothicStd.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Reset some default styles to ensure no unexpected margins or paddings */
 body, html {
@@ -10,6 +19,10 @@ body, html {
 
 body {
   font-family: 'Press Start 2P', cursive; /* Apply the Press Start 2P font */
+}
+
+h1 {
+  font-family: 'Hiragino Kaku Gothic Std', sans-serif; /* Apply the Hiragino Kaku Gothic Std font */
 }
 
 .App {
@@ -29,7 +42,9 @@ body {
 }
 
 .App-header {
+  position: relative;
   background: linear-gradient(to right, #00747B, #9E00FF);
+  background: linear-gradient(to right, #00747B 0%, #2B5098 25%, #8A2BE2 75%, #9E00FF 100%);
   min-height: 100vh; /* Make sure the header covers the entire view height */
   display: flex;
   flex-direction: column;
@@ -37,30 +52,35 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  position: relative;
+  overflow: hidden; /* Ensure content doesn't overflow */
 }
 
-.Image-container {
-  position: absolute; /* Absolute positioning within the App */
+.App-header::before {
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: url('./images/collage1.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.05; /* Set the desired opacity */
+  z-index: 0; /* Ensure it is behind the text */
+}
+
+.App-header .letter,
+.App-header .Header1,
+.App-header .Header2 {
+  position: relative;
+  z-index: 1; /* Ensure text is above the background image */
+}
+
+.Image-container {
+  display: none; /* Remove this as the background is now handled by the pseudo-element */
 }
 
 .App-link {
   color: #61dafb;
-}
-
-.App-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0.05;
-  margin: 20px auto;
 }
 
 .letter-container {
@@ -70,27 +90,67 @@ body {
 }
 
 .letter {
-  font-size: 100px;
-  color: white;
+  font-size: 190px;
+  color: rgb(255, 255, 255);
   position: absolute; /* Absolute positioning */
 }
 
 .Y {
-  top: 60px;
-  left: 20px;
+  color: #ffffff; /* Set the text color */
+  top: 197.5px;
+  left: -90px;
+  right: 50px;
+  transform: rotate(-15deg);
 }
 
 .O1 {
-  top: 20px;
+  color: #ffffff; /* Set the text color */
+  font-size: 190px;
+  top: -12.5px;
   left: 80px;
 }
 
 .O2 {
-  top: 30px;
-  left: 140px;
+  color: #ffffff; /* Set the text color */
+  font-size: 150px;
+  top: 5px;
+  left: -85px;
+  transform: rotate(10deg);
 }
 
 .Z {
-  top: 40px;
-  left: 200px;
+  color: #ffffff; /* Set the text color */
+  font-size: 175px;
+  top: -170px;
+  left: 70px;
+}
+
+.Header1 {
+  font-family: 'Hiragino Kaku Gothic Std', sans-serif;
+  font-size: 38px; /* Adjust the size as needed */
+  color: #ffffff; /* Set the text color */
+  padding: 20px; /* Add some padding */
+  text-align: center; /* Center the text */
+  margin: 20px auto; /* Center the container and add some margin */
+  width: fit-content; /* Adjust the width to fit the content */
+  border-radius: 8px; /* Add rounded corners */
+  position: absolute; /* Use absolute positioning */
+  top: -650px; /* Adjust the top position as needed */
+  left: 9%; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%); /* Center the element */
+}
+
+.Header2 {
+  font-family: 'Hiragino Kaku Gothic Std', sans-serif;
+  font-size: 38px; /* Adjust the size as needed */
+  color: #ffffff; /* Set the text color */
+  padding: 20px; /* Add some padding */
+  text-align: center; /* Center the text */
+  margin: 20px auto; /* Center the container and add some margin */
+  width: fit-content; /* Adjust the width to fit the content */
+  border-radius: 8px; /* Add rounded corners */
+  position: absolute; /* Use absolute positioning */
+  top: -740px; /* Adjust the top position as needed */
+  left: 200px; /* Adjust the left position as needed */
+  transform: translate(-50%, -50%); /* Center the element */
 }
