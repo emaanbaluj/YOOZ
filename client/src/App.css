@@ -18,7 +18,15 @@ body, html {
 }
 
 body {
+  overflow: hidden; /* Prevent scrolling */
+  height: 100vh; /* Set the body height to the viewport height */
   font-family: 'Press Start 2P', cursive; /* Apply the Press Start 2P font */
+}
+
+
+.App-header {
+  height: 100vh; /* Set the header height to the viewport height */
+  overflow: hidden; /* Prevent scrolling */
 }
 
 h1 {
@@ -97,7 +105,7 @@ h1 {
 
 .Y {
   color: #ffffff; /* Set the text color */
-  top: 197.5px;
+  top: 313px;
   left: -90px;
   right: 50px;
   transform: rotate(-15deg);
@@ -106,23 +114,23 @@ h1 {
 .O1 {
   color: #ffffff; /* Set the text color */
   font-size: 190px;
-  top: -12.5px;
+  top: 12.5%;
   left: 80px;
 }
 
 .O2 {
   color: #ffffff; /* Set the text color */
   font-size: 150px;
-  top: 5px;
-  left: -85px;
+  top: 115px;
+  left: -75px;
   transform: rotate(10deg);
 }
 
 .Z {
   color: #ffffff; /* Set the text color */
   font-size: 175px;
-  top: -170px;
-  left: 70px;
+  top: -60px;
+  left: 80px;
 }
 
 .Header1 {
@@ -135,8 +143,8 @@ h1 {
   width: fit-content; /* Adjust the width to fit the content */
   border-radius: 8px; /* Add rounded corners */
   position: absolute; /* Use absolute positioning */
-  top: -650px; /* Adjust the top position as needed */
-  left: 9%; /* Adjust the left position as needed */
+  top: -530px; /* Adjust the top position as needed */
+  left: 10%; /* Adjust the left position as needed */
   transform: translate(-50%, -50%); /* Center the element */
 }
 
@@ -150,7 +158,41 @@ h1 {
   width: fit-content; /* Adjust the width to fit the content */
   border-radius: 8px; /* Add rounded corners */
   position: absolute; /* Use absolute positioning */
-  top: -740px; /* Adjust the top position as needed */
-  left: 200px; /* Adjust the left position as needed */
+  top: -622.5px; /* Adjust the top position as needed */
+  left: 210px; /* Adjust the left position as needed */
   transform: translate(-50%, -50%); /* Center the element */
+}
+
+.ConnectWithContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%);
+  width: 1000%; /* Adjust this value to control overall width */
+}
+
+.ConnectWith {
+  font-size: 25px;
+  color: #ffffff;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+.leftLine, .rightLine {
+  height: 2px;
+  background-color: #ffffff;
+  border: none;
+  width: 40%; /* Adjust this value to control line length */
+}
+
+.leftLine {
+  margin-right: 15px;
+}
+
+.rightLine {
+  margin-left: 15px;
 }
